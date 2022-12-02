@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="488.0" prefWidth="784.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.macewan.cmpt305.jfxproject.Controller">
+   <children>
+      <TableView id="tblPropertyAssessments" fx:id="tblPropertyAssessments" layoutX="179.0" layoutY="31.0" prefHeight="443.0" prefWidth="595.0" style="-fx-font-size: 10;">
+        <columns>
+          <TableColumn id="tcAccount" fx:id="tcAccount" prefWidth="56.5" text="Account" />
+          <TableColumn id="tcAddress" fx:id="tcAddress" prefWidth="112.0" text="Address" />
+            <TableColumn id="tcAssessedValue" fx:id="tcAssessedValue" prefWidth="73.0" text="Assessed Value" />
+            <TableColumn id="tcAssessmentClasses" fx:id="tcAssessmentClass" prefWidth="111.0" text="Assessment Class" />
+            <TableColumn id="tcNeighbourhood" fx:id="tcNeighbourhood" prefWidth="114.7352294921875" text="Neighbourhood" />
+            <TableColumn id="tcLocation" fx:id="tcLocation" prefWidth="127.2647705078125" text="[Latitude, Longitude]" />
+        </columns>
+      </TableView>
+      <Label id="lblTitle" fx:id="lblTitle" layoutX="180.0" layoutY="14.0" text="Edmonton Property Assessments">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <VBox layoutX="8.0" layoutY="14.0" prefHeight="459.0" prefWidth="165.0" style="-fx-font-size: 10;">
+         <children>
+            <Label fx:id="lblSource" text="Select Data Source">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="5.0" />
+               </VBox.margin>
+            </Label>
+            <ChoiceBox fx:id="cBoxSource" minHeight="-Infinity" prefHeight="20.0" prefWidth="162.0" style="-fx-font-size: 10;">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </ChoiceBox>
+            <Button fx:id="btnReadData" alignment="CENTER" minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="162.0" text="Read Data">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Separator prefWidth="200.0" />
+            <Label fx:id="lblFindPA" text="Find Property Assessment">
+               <VBox.margin>
+                  <Insets left="5.0" top="7.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblAccount" text="Account Number:">
+               <font>
+                  <Font size="10.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" top="2.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="tfAccount" minHeight="-Infinity" prefHeight="20.0" prefWidth="165.0">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </TextField>
+            <Label fx:id="lblAddress" text="Address(#suite #house street):">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfAddress" minHeight="-Infinity" prefHeight="20.0">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </TextField>
+            <Label fx:id="lblNeighbourhood" text="Neighbourhood:">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfNeighbourhood" minHeight="-Infinity" prefHeight="20.0">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </TextField>
+            <Label fx:id="lblAssessmentClass" text="Assessment Class:">
+               <font>
+                  <Font size="10.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" />
+               </VBox.margin>
+            </Label>
+            <ChoiceBox fx:id="cBoxAssessmentClass" minHeight="-Infinity" prefHeight="20.0" prefWidth="159.0" style="-fx-font-size: 10;">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" />
+               </VBox.margin>
+            </ChoiceBox>
+            <Label fx:id="lblAssessedRange" text="Assessed Value Range:">
+               <font>
+                  <Font size="10.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" />
+               </VBox.margin>
+            </Label>
+            <HBox prefHeight="24.0" prefWidth="165.0">
+               <children>
+                  <TextField fx:id="tfMinValue" minHeight="-Infinity" prefHeight="20.0" prefWidth="79.0" promptText="Min Value">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <TextField fx:id="tfMaxValue" minHeight="-Infinity" prefHeight="20.0" prefWidth="80.0" promptText="Max Value">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="27.0" prefWidth="165.0">
+               <children>
+                  <Button fx:id="btnSearch" minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="76.0" text="Search">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnReset" minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="79.0" text="Reset">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
